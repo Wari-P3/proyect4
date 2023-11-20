@@ -7,14 +7,14 @@ data = pd.read_csv('vehicles_us.csv')
 st.header('Data Visualization')
 
 histogram = st.checkbox('\'Model Year\' vs \'Condition\' Histogram')
-chart = st.checkbox('Chart')
+scatter_plot = st.checkbox('\'Odometer\' vs \'Price\' Scatter Plot')
 
 if histogram:
     st.subheader('Histogram')
     fig = px.histogram(data, x='model_year',color='condition')
     st.plotly_chart(fig, use_container_width=True)
 
-if chart:
-    st.subheader('Chart')
-    fig = px.scatter(data, x='odometer',color='price')
+if scatter_plot:
+    st.subheader('Scatter Plot')
+    fig = px.scatter(data, x='odometer',y='price')
     st.plotly_chart(fig, use_container_width=True)
