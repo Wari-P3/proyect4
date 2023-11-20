@@ -16,3 +16,5 @@ if histogram:
 
 if chart:
     st.subheader('Chart')
+    fig = px.scatter(data, x='odometer',color='price')
+    st.plotly_chart(fig, use_container_width=True)
